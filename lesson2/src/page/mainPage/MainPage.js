@@ -1,39 +1,38 @@
 // rsc
-import React from 'react';
+import React, {useState} from 'react';
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import User from "../../components/user/User";
-import Schools from "../../components/schools/Schools";
+import School from "../../components/school/School";
 import Example from "../../components/example/Example";
-import Button from "../../components/button/Button";
+import Button, {Button2} from "../../components/button/Button";
+import Count from "../../components/count/Count";
+import Modal from "../../components/modal/Modal";
 
 const MainPage = () => {
-
     const [show, setShow] = useState(false);
-
-    console.log(show, 'в начале')
-
     const handleShow = () => {
-        setShow(true)
+        setShow(prev => !prev)
     }
 
 
     return (
         <div>
             <Header/>
+            <Modal/>
+            <Count/>
             <h1>MainPage</h1>
             <div>Show</div>
-            <button></button>
+            <button onClick={handleShow}>Открыть</button>
             {
-                show && <div>Modal window</div>
+                show && <div style={{backgroundColor: 'red'}}>Modal window</div>
             }
             <User name={'Murat'} age={37} email={'murat.bukarbaev@gmail.com'}/>
-
-            <Schools schoolName={'Geeks'} description={'Международная IT-академия'} address={'БЦ Victory, улица Ибраимова, 103, Бишкек'}/>
-            <Example title={Example}>
-                <p style={{color: 'red'}}>name: Bakyt</p>
-                <p style={{color: 'blue'}}>name: Bakyt</p>
-                <p style={{color: 'green'}}>name: Bakyt</p>
+            <School title={'KSTU'}/>
+            <Example title={'Example'}>
+                <p style={{color: 'red'}}>name: Baiaman</p>
+                <p style={{color: 'blue'}}>name: Baiaman</p>
+                <p style={{color: 'green'}}>name: Baiaman</p>
                 <p>name: Bakyt</p>
                 <Button name={'Save'}/>
                 <Button name={'Edit'}/>

@@ -5,7 +5,7 @@ const Example = ({title, children}) => {
     return (
         <div>
             <p>title: {title}</p>
-            <button className={'btn'}>Save</button>
+            <button className={classes.btn}>Save</button>
             {children}
         </div>
     );
