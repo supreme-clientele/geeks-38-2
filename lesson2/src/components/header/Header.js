@@ -1,12 +1,15 @@
 // rsc
 import React from 'react';
-import Title from "../title/Title";
+import Title from '../title/Title';
+import classes from './header.module.css';
 
-const Header = () => {
+const Header = ({text}) => {
     return (
-        <div>
-            <Title name = {'Header'}/>
-        </div>
+        <>
+            <Title name={'Header'}/>
+            {/*<div style={{color: text}}>{text}</div>*/}
+            <div className={classes[text]}>{text}</div>
+        </>
     );
 };
 
