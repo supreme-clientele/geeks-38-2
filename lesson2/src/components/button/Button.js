@@ -1,15 +1,17 @@
 import React from 'react';
 import classes from './button.module.css';
 
-export const Button2 = ({name}) => {
+const Button = ({ handleShow, handleSave, handleDelete, handleEdit  }) => {
     return (
-        <button className={classes.btn}>{name}</button>
-    );
-};
+        <div className={classes.buttonContainer}>
+            <button onClick={() => handleShow('open')}>Открыть</button>
+            <button onClick={() => handleShow('close')}>Закрыть</button>
 
-const Button = ({name}) => {
-    return (
-        <button className={classes.btn}>{name}</button>
+            <button className={classes.saveButton} onClick={handleSave}>Save</button>
+            <button className={classes.deleteButton} onClick={handleDelete}>Delete</button>
+            <button className={classes.editButton} onClick={handleEdit}>Edit</button>
+
+        </div>
     );
 };
 
