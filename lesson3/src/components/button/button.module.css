@@ -1,0 +1,21 @@
+.buttonContainer {
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px;
+}
+
+.saveButton {
+    background-color: green;
+}
+
+.deleteButton {
+    background-color: red;
+}
+
+.editButton {
+    background-color: blue;
+}
