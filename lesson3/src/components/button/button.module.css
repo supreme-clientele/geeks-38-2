@@ -1,21 +1,15 @@
-.buttonContainer {
-    display: flex;
-    gap: 10px;
-    margin: 10px;
-}
-
-button {
-    padding: 10px;
-}
-
-.saveButton {
+.btn {
     background-color: green;
 }
 
-.deleteButton {
+.green {
+    background-color: green;
+}
+
+.red {
     background-color: red;
 }
 
-.editButton {
+.blue {
     background-color: blue;
 }

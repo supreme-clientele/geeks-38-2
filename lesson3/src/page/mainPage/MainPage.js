@@ -37,22 +37,23 @@ const MainPage = () => {
     return (
         <div>
             <Header text={'red'}/>
-            <Header text={'blue'}/>
+            {/*<Header text={'blue'}/>*/}
             {
                 show && <Modal handleShow={handleShow}/>
             }
             <h1>{input}</h1>
             <input type="text" onChange={handleChange}/>
             <Input onChange={handleChange} placeholder={'Введите текст'}/>
-
-            <div>
-                <Button
-                    handleShow={handleShow}
-                    handleSave={handleSave}
-                    handleDelete={handleDelete}
-                    handleEdit={handleEdit}
-                />
-            </div>
+            <div>Show</div>
+            <Button name={'Открыть'} color={'green'} action={handleShow}/>
+            {/*<div>*/}
+            {/*    <Button*/}
+            {/*        handleShow={handleShow}*/}
+            {/*        handleSave={handleSave}*/}
+            {/*        handleDelete={handleDelete}*/}
+            {/*        handleEdit={handleEdit}*/}
+            {/*    />*/}
+            {/*</div>*/}
 
             <Footer/>
         </div>
