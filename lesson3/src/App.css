@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .App {
   text-align: center;
 }
