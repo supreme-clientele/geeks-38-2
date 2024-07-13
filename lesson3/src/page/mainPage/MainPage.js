@@ -14,7 +14,7 @@ import TodoList from '../../components/TodoList/TodoList';
 const MainPage = () => {
     const [ show, setShow ] = useState(false);
     const [ input, setInput ] = useState('');
-    const [search, setSearch] = useState(''); // Состояние для хранения значения поиска
+    const [search, setSearch] = useState('');
     const handleShow = () => {
         setShow(prev => !prev);
     };
@@ -70,19 +70,19 @@ const MainPage = () => {
     };
 
     const handleSearchChange = (event) => {
-        setSearch(event.target.value); // Обновляем значение поиска
+        setSearch(event.target.value);
     };
 
     const filteredTasks = tasks.filter(task =>
-        task.title.toLowerCase().includes(search.toLowerCase()) // Фильтруем задачи по значению поиска
+        task.title.toLowerCase().includes(search.toLowerCase())
     );
 
     return (
         <div>
             <Header text={'red'} />
-            <Input type="text" placeholder="Поиск задач" onChange={handleSearchChange} /> {/* Поле ввода для поиска */}
+            <Input type="text" placeholder="Поиск задач" onChange={handleSearchChange} />
             <TodoList
-                todoList={filteredTasks} // Передаем отфильтрованные задачи
+                todoList={filteredTasks}
                 handleDelete={handleDelete}
                 handleEdit={handleEdit}
                 handleDone={handleDone}

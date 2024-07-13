@@ -11,11 +11,11 @@
 }
 
 .li.done {
-    background-color: lightgreen; /* Фоновый цвет при выполнении */
+    background-color: lightgreen;
 }
 
 .li.done .info p {
-    text-decoration: line-through; /* Зачеркиваем текст внутри .info */
+    text-decoration: line-through;
 }
 
 .info,
@@ -25,5 +25,5 @@
 }
 
 .btns button.done {
-    text-decoration: line-through; /* Зачеркивание текста кнопок Done */
+    text-decoration: line-through;
 }
