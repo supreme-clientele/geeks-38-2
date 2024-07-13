@@ -14,6 +14,7 @@ import TodoList from '../../components/TodoList/TodoList';
 const MainPage = () => {
     const [ show, setShow ] = useState(false);
     const [ input, setInput ] = useState('');
+    const [search, setSearch] = useState(''); // Состояние для хранения значения поиска
     const handleShow = () => {
         setShow(prev => !prev);
     };
@@ -24,7 +25,7 @@ const MainPage = () => {
     };
 
 
-    const [ todoList, setTodoList ] = useState([
+    const [ tasks, setTasks ] = useState([
             {
                 id: 1,
                 title: 'HTML',
@@ -42,47 +43,53 @@ const MainPage = () => {
             }
         ]
     );
-    console.log(todoList,'todoList');
+    console.log(tasks,'tasks');
 
     const handleAdd = () => {
-        setTodoList(prev=> [...prev,
+        setTasks(prev=> [...prev,
             {
-                id: todoList.length +1,
+                id: tasks.length +1,
                 title: input
             }
         ]);
     };
 
     const handleDelete = (id) => {
+        setTasks(prev => prev.filter(todo => todo.id !== id));
         console.log('handleDelete');
         console.log(id);
     }
-    const handleEdit = () => {
+    const handleEdit = (id) => {
         console.log('handleEdit');
     }
-    const handleDone = (id) => {
-        console.log(id);
-        todoList.map(todo=> {
-            console.log(todo.id);
-            if(todo.id===id) {
-                return todo.complete=!todo.complete
-            }
-        })
-        setTodoList([...todoList])
-    }
 
+    const handleDone = (id) => {
+        setTasks(prev => prev.map(task =>
+            task.id === id ? { ...task, complete: !task.complete } : task
+        ));
+    };
+
+    const handleSearchChange = (event) => {
+        setSearch(event.target.value); // Обновляем значение поиска
+    };
+
+    const filteredTasks = tasks.filter(task =>
+        task.title.toLowerCase().includes(search.toLowerCase()) // Фильтруем задачи по значению поиска
+    );
 
     return (
         <div>
-            <Header text={'red'}/>
-            <TodoList todoList={todoList} handleDelete={handleDelete} handleEdit={handleEdit} handleDone={handleDone}/>
-            {
-                show && <Modal handleShow={handleShow} handleChange={handleChange} handleAdd={handleAdd} />
-            }
-            <div>Show</div>
-            <Button name={'Открыть'} color={'green'} action={handleShow}/>
-
-            <Footer/>
+            <Header text={'red'} />
+            <Input type="text" placeholder="Поиск задач" onChange={handleSearchChange} /> {/* Поле ввода для поиска */}
+            <TodoList
+                todoList={filteredTasks} // Передаем отфильтрованные задачи
+                handleDelete={handleDelete}
+                handleEdit={handleEdit}
+                handleDone={handleDone}
+            />
+            {show && <Modal handleShow={handleShow} handleChange={handleChange} handleAdd={handleAdd} />}
+            <Button name={'Открыть'} color={'green'} action={handleShow} />
+            <Footer />
         </div>
     );
 };

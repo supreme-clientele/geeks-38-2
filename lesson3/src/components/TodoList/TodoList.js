@@ -7,7 +7,7 @@ const TodoList = ({ todoList, handleDelete, handleEdit, handleDone }) => {
     return (
         <ul className={classes.ul}>
             {
-                todoList.map(todo => <Todo key={todo.id} todo={todo} handleDelete={handleDelete} handleEdit={handleEdit} handleDone={handleDone}/>)
+                todoList.map(task => <Todo key={task.id} todo={task} handleDelete={handleDelete} handleEdit={handleEdit} handleDone={handleDone}/>)
             }
         </ul>
     );

@@ -2,20 +2,24 @@ import React from 'react';
 import classes from './Todo.module.css';
 import Button from '../button/Button';
 
+const Todo = ({ todo, handleDelete, handleEdit, handleDone }) => {
+    const { id, title, complete } = todo;
 
-const Todo = ({ todo, handleDelete, handleEdit, handleDone}) => {
+    const handleDoneClick = () => {
+        handleDone(id);
+    };
+
     return (
-        <li className={classes.li}>
+        <li className={`${classes.li} ${complete ? classes.done : ''}`}>
             <div className={classes.info}>
-                <p>{todo.id}</p>
-                <p>{todo.title}</p>
+                <p>{id}</p>
+                <p>{title}</p>
             </div>
             <div className={classes.btns}>
-                <button onClick={handleEdit}>Edit</button>
-                <button onClick={()=>handleDone(todo.id)}>Done</button>
-                <button onClick={()=>handleDelete(todo.id)}>Delete</button>
+                <Button name="Edit" action={() => handleEdit(id)} className={complete ? 'done' : ''} />
+                <Button name="Done" action={handleDoneClick} className={complete ? 'done' : ''} />
+                <Button name="Delete" action={() => handleDelete(id)} className={complete ? 'done' : ''} />
             </div>
-
         </li>
     );
 };

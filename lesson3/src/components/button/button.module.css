@@ -1,5 +1,10 @@
 .btn {
-    background-color: green;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .green {

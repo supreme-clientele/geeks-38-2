@@ -10,8 +10,20 @@
     justify-content: space-between;
 }
 
+.li.done {
+    background-color: lightgreen; /* Фоновый цвет при выполнении */
+}
+
+.li.done .info p {
+    text-decoration: line-through; /* Зачеркиваем текст внутри .info */
+}
+
 .info,
 .btns {
     display: flex;
     gap: 20px;
+}
+
+.btns button.done {
+    text-decoration: line-through; /* Зачеркивание текста кнопок Done */
 }
