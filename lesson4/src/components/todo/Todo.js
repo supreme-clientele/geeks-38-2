@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import classes from './Todo.module.css';
-import Button from '../button/Button';
-
 
 const Todo = ({
                   todo,
@@ -11,8 +9,8 @@ const Todo = ({
                   handleCurrentEdit,
                   isEdit
               }) => {
-    const [input, setInput] = useState(todo.title)
-    console.log(input,'input');
+    const [input, setInput] = useState(todo.title);
+
     return (
         <>
             <li className={`${classes.li} ${todo.complete && classes.done}`}>
@@ -21,26 +19,23 @@ const Todo = ({
                     <p>{todo.title}</p>
                 </div>
                 <div className={classes.btns}>
-                    <button onClick={()=>handleCurrentEdit(todo.id)}>Edit</button>
-                    <button onClick={()=>handleDone(todo.id)}>Done</button>
-                    <button onClick={()=>handleDelete(todo.id)}>Delete</button>
+                    <button onClick={() => handleCurrentEdit(todo.id)}>Edit</button>
+                    <button onClick={() => handleDone(todo.id)}>Done</button>
+                    <button onClick={() => handleDelete(todo.id)}>Delete</button>
                 </div>
-
             </li>
             {
                 isEdit && <div className={classes.edit}>
-                    <input type="text"
-                           value={input}
-                           onChange={event => setInput(event.target.value)}
+                    <input
+                        type="text"
+                        value={input}
+                        onChange={event => setInput(event.target.value)}
                     />
-                    <button onClick={()=> {
-                        handleEdit(
-                            {
-                                ...todo, title:input
-                            }
-                        )
-                    }}>save</button>
-                    <button>cancel</button>
+                    <button onClick={() => {
+                        handleEdit({ ...todo, title: input });
+                        handleCurrentEdit('');  // Закрывает блок редактирования при нажатии Save
+                    }}>Save</button>
+                    <button onClick={() => handleCurrentEdit('')}>Cancel</button> {/* Закрывает блок редактирования при нажатии Cancel */}
                 </div>
             }
         </>
