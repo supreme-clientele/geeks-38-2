@@ -15,7 +15,7 @@ const PokemonCard = ({ pokemon }) => {
     }, [pokemon.url]);
 
     const handleMoreInfoClick = () => {
-        // добавить логику для отображения подробной информации
+        // логика для отображения подробной информации
         alert(`Подробнее о ${pokemon.name}`);
     };
 
