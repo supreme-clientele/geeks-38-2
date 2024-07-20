@@ -7,6 +7,7 @@ export const Button2 = ({name}) => {
         <button className={classes.btn}>{name}</button>
     );
 };
+
 const Button = ({name, action, color}) => {
     return (
         <button className={`${classes.btn} ${classes[color]}`} onClick={action} >{name}</button>

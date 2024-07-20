@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import TodoList from '../../components/TodoList/TodoList';
 import Modal from '../../components/modal/Modal';
 import Button from '../../components/button/Button';
+import Pagination from "../../components/pagination/Pagination";
 
 
 const TodoPage = () => {
@@ -45,19 +46,45 @@ const TodoPage = () => {
         ]);
     };
 
-    useEffect(() => {
-        const myLocalStorage = JSON.parse(localStorage.getItem('tasks'));
-        if (myLocalStorage === null) {
-            return localStorage.setItem('tasks', JSON.stringify(todoList));
-        }
-        if (myLocalStorage.id !==0) {
-            setLocalStorage(myLocalStorage);
-        }
-    }, [])
+    // useEffect(() => {
+    //     const myLocalStorage = JSON.parse(localStorage.getItem('tasks'));
+    //     if (myLocalStorage === null) {
+    //         return localStorage.setItem('tasks', JSON.stringify(todoList));
+    //     }
+    //     if (myLocalStorage.id !==0) {
+    //         setLocalStorage(myLocalStorage);
+    //     }
+    // }, [])
+    //
+    // useEffect( () => {
+    //     localStorage.setItem('tasks', JSON.stringify(todoList))
+    // }, [todoList])
 
-    useEffect( () => {
-        localStorage.setItem('tasks', JSON.stringify(todoList))
-    }, [todoList])
+    const limit = 10
+
+    const [offset, setOffset] = useState(0);
+
+    const page = Math.floor(offset / limit) + 1;
+
+
+    const handlePrev = () => {
+        if (page > 1) return setOffset(prev => prev - limit)
+    }
+
+    const handleNext = () => {
+        return setOffset(prev => prev + limit)
+    }
+
+    const getApi = async () => {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/todos?_limit=${limit}&_start=${offset}`)
+        const data = await response.json();
+        console.log(data, 'getAPI');
+        return data;
+    }
+
+    useEffect(() => {
+        getApi().then((data) => setTodoList(data))
+    }, [offset]);
 
     const handleDelete = (id) => {
         setTodoList(todoList.filter(todo=>todo.id!==id))
@@ -83,14 +110,16 @@ const TodoPage = () => {
         console.log('1 useEffect')
     }, [show]);
 
+
     return (
         <>
-            <TodoList todoList={todoList} handleDelete={handleDelete} handleEdit={handleEdit} handleDone={handleDone}/>
-            {
-                show && <Modal handleShow={handleShow} handleChange={handleChange} handleAdd={handleAdd} />
-            }
             <div>Show</div>
             <Button name={'Открыть'} color={'green'} action={handleShow}/>
+            <TodoList todoList={todoList} handleDelete={handleDelete} handleEdit={handleEdit} handleDone={handleDone}/>
+            {
+                show && <Modal handleShow={handleShow} handleChange={handleChange} handleAdd={handleAdd}/>
+            }
+            <Pagination page={page} prev={handlePrev} next={handleNext}/>
         </>
     );
 };
