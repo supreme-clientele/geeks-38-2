@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const School = ({title}) => {
     return (
         <div>

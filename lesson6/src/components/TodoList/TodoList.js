@@ -4,8 +4,8 @@ import classes from './TodoList.module.css';
 
 
 const TodoList = ({ todoList, handleDelete, handleEdit, handleDone }) => {
-    const [currentEdit, setCurrentEdit] = useState('')
-    console.log(currentEdit,'currentEdit');
+    const [currenEdit, setCurrentEdit] = useState('')
+    console.log(currenEdit,'currenEdit');
     return (
         <ul className={classes.ul}>
             {
@@ -16,7 +16,7 @@ const TodoList = ({ todoList, handleDelete, handleEdit, handleDone }) => {
                     handleEdit={handleEdit}
                     handleDone={handleDone}
                     handleCurrentEdit={setCurrentEdit}
-                    isEdit={currentEdit===todo.id}
+                    isEdit={currenEdit===todo.id}
                 />)
             }
         </ul>

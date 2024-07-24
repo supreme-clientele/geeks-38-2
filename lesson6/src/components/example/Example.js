@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Example.module.css';
 
+
 const Example = ({title, children}) => {
     return (
         <div>
