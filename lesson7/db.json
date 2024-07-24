@@ -1,0 +1,70 @@
+{
+  "student": [
+    {
+      "id": 2,
+      "surname": "Sariev",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": 2,
+      "surname": "Sariev",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": 222,
+      "surname": "Sariev",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": 222,
+      "surname": "Sariev",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": 222,
+      "surname": "Sariev",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": 222,
+      "surname": "Sariev",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": 222,
+      "surname": "Sariev",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": 222,
+      "surname": "Sariev",
+      "name": "Bakyt",
+      "groupId": 2
+    }
+  ],
+  "group": [
+    {
+      "id": "1",
+      "group": "БиПЗИм(дот)-1-22"
+    },
+    {
+      "id": "2",
+      "group": "ИВТСдот-1-22"
+    },
+    {
+      "id": "3",
+      "group": "ИСТд-1-22"
+    },
+    {
+      "id": "4",
+      "group": "ПЗИдот-1-22"
+    }
+  ]
+}
