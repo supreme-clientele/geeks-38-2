@@ -1,0 +1,154 @@
+{
+  "student": [
+    {
+      "id": "1",
+      "surname": "Акунов",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": "2",
+      "surname": "Алиев",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": "3",
+      "surname": "Алимжанов",
+      "name": "Bakyt",
+      "groupId": 3
+    },
+    {
+      "id": "4",
+      "surname": "Алишеров",
+      "name": "Bakyt",
+      "groupId": 4
+    },
+    {
+      "id": "5",
+      "surname": "Аширбеков",
+      "name": "Данияр",
+      "groupId": 3
+    },
+    {
+      "id": "6",
+      "surname": "Болотбекова",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": "7",
+      "surname": "Бондарева",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": "8",
+      "surname": "Джузумалиев",
+      "name": "Арстан",
+      "groupId": 3
+    },
+    {
+      "id": "9",
+      "surname": "Джусупбеков",
+      "name": "Bakyt",
+      "groupId": 1
+    },
+    {
+      "id": "10",
+      "surname": "Ергалиев",
+      "name": "Bakyt",
+      "groupId": 4
+    },
+    {
+      "id": "11",
+      "surname": "Жакыпов",
+      "name": "Мирболот",
+      "groupId": 2
+    },
+    {
+      "id": "12",
+      "surname": "Жолчубекова",
+      "name": "Bakyt",
+      "groupId": 2
+    },
+    {
+      "id": "15",
+      "surname": "Кубатбекова",
+      "name": "Bakyt",
+      "groupId": 4
+    },
+    {
+      "id": "16",
+      "surname": "Куттубеков",
+      "name": "Bakyt",
+      "groupId": 1
+    },
+    {
+      "id": "17",
+      "surname": "Мирзабеков",
+      "name": "Салымбек",
+      "groupId": 3
+    },
+    {
+      "id": "18",
+      "surname": "Муратов",
+      "name": "Bakyt",
+      "groupId": 1
+    },
+    {
+      "id": "19",
+      "surname": "Ниязалиев",
+      "name": "Шатман",
+      "groupId": 1
+    },
+    {
+      "id": "20",
+      "surname": "Таалайбеков",
+      "name": "Арлен",
+      "groupId": 4
+    },
+    {
+      "id": "232",
+      "surname": "wefwwe",
+      "name": "wefwef",
+      "groupId": 2
+    },
+    {
+      "id": "23223",
+      "surname": "wefwwe234",
+      "name": "wefwef23423",
+      "groupId": 2
+    },
+    {
+      "id": "234423",
+      "surname": "wefwef",
+      "name": "qwedwe",
+      "groupId": 2
+    },
+    {
+      "id": "234423234",
+      "surname": "wefwef234",
+      "name": "qwedwe2342",
+      "groupId": 2
+    }
+  ],
+  "group": [
+    {
+      "id": "1",
+      "group": "БиПЗИм(дот)-1-22"
+    },
+    {
+      "id": "2",
+      "group": "ИВТСдот-1-22"
+    },
+    {
+      "id": "3",
+      "group": "ИСТд-1-22"
+    },
+    {
+      "id": "4",
+      "group": "ПЗИдот-1-22"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+.card {
+    width: 340px;
+    height: 274px;
+    background-color: #0D131A;
+    border: 1px solid #FFFFFF;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.image {
+    width: 120px;
+    height: 120px;
+    margin-top: 15px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 17px;
+    text-transform: capitalize;
+}
+
+.moreInfoButton {
+    width: 316px;
+    height: 42px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #DB00FF;
+    color: #FFFFFF;
+    border: none;
+    margin-top: 32px;
+    font-size: 14px;
+}
