@@ -1,10 +1,10 @@
-import React from 'react';
 import './App.css';
 import MainPage from './page/mainPage/MainPage';
 import TodoPage from './page/todoPage/TodoPage';
 import PokemonPage from './page/pokemonPage/PokemonPage';
 import FormPage from './page/formPage/FormPage';
-import PokemonFormPage from './components/pokemonFormPage/PokemonFormPage';
+import Fetch from './page/Fetch/Fetch';
+import FormAxios from './page/formAxios/FormAxios';
 
 function App() {
     return (
@@ -13,9 +13,13 @@ function App() {
             {/*<TodoPage/>*/}
             {/*<PokemonPage/>*/}
             {/*<FormPage/>*/}
-            <PokemonFormPage />
+            <FormAxios/>
+            {/*<Fetch/>*/}
         </div>
+
     );
 }
 
+
 export default App;
+
